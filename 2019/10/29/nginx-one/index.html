@@ -151,22 +151,42 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://hbimg.b0.upaiyun.com/59ba85b578dd5d3d9006020101c0a97277b24856204e0-XtC7Gp_fw658);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Has shown signs hello n Hexo i&#39;m 周段琦</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://pic1.zhimg.com/50/v2-e68d524210343613129267bd2cb75a0d_hd.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >nginx_one</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>$ hexo new “My New Post”</p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h3 id="既然有了服务器接下啦-需要怎么管理我的服务器呢-这个时候Nginx出现了"><a href="#既然有了服务器接下啦-需要怎么管理我的服务器呢-这个时候Nginx出现了" class="headerlink" title="既然有了服务器接下啦 需要怎么管理我的服务器呢 这个时候Nginx出现了"></a>既然有了服务器接下啦 需要怎么管理我的服务器呢 这个时候Nginx出现了</h3><h2 id="什么是Nginx？"><a href="#什么是Nginx？" class="headerlink" title="什么是Nginx？"></a>什么是Nginx？</h2><p>没有听过Nginx？那么一定听过它的”同行”Apache吧！Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。它出现的时间太长了，它兴起的年代，互联网产业远远比不上现在。所以它被设计为一个重量级的。它不支持高并发的服务器。在Apache上运行数以万计的并发访问，会导致服务器消耗大量内存。操作系统对其进行进程或线程间的切换也消耗了大量的CPU资源，导致HTTP请求的平均响应速度降低这些都决定了Apache不可能成为高性能WEB服务器，轻量级高并发服务器Nginx就应运而生了</p>
+<ul>
+<li>Nginx使用基于事件驱动架构，使得其可以支持数以百万级别的TCP连接</li>
+<li>高度的模块化和自由软件许可证是的第三方模块层出不穷（这是个开源的时代啊~）</li>
+<li>Nginx是一个跨平台服务器，可以运行在Linux,Windows,FreeBSD,Solaris, AIX,Mac OS等操作系统上</li>
+<li>这些优秀的设计带来的极大的稳定性  所以，Nginx火了！</li>
+</ul>
+<h3 id="Nginx的用武之地"><a href="#Nginx的用武之地" class="headerlink" title="Nginx的用武之地"></a>Nginx的用武之地</h3><p>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
+<p><strong>关于代理</strong></p>
+<blockquote>
+<p>说到代理，首先我们要明确一个概念，所谓代理就是一个代表、一个渠道；       此时就设计到两个角色，一个是被代理角色，一个是目标角色，被代理角色通过这个代理访问目标角色完成一些任务的过程称为代理操作过程；如同生活中的专卖店~客人到adidas专卖店买了一双鞋，这个专卖店就是代理，被代理角色就是adidas厂家，目标角色就是用户。</p>
+</blockquote>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><blockquote>
+<p>很久以前，老王去饭店吃饭，需要先到饭店，七荤八素点好菜，坐等饭菜上桌，然后大快朵颐，不亦乐乎。有了第三方订餐外卖平台（代理），老王懒得动身前往饭店，老王打个电话或用APP，先选好某个饭店，再点好菜，外卖小哥会送上门来。由于某个品牌的饭店口碑特别好，食客络绎不绝涌入，第三方订餐电话也不绝于耳，但是限于饭店接待能力有限，无法提供及时服务，很多食客等得不耐烦了，纷纷铩羽而归，饭店老总看着煮熟的鸭子飞走了，心疼不已。痛定思痛，老总又成立了几个连锁饭店，形成一个集群，对外提供统一标准的菜品服务，电话订餐电话400-xxx-7777，当食客涌入饭店总台，总台将食客用大巴运到各个连锁店，这样食客既不需要排队，各连锁店都能高速运转起来，一举两得，老总乐开了花，并为此种运作模式起名为“反向代理”（Reverse Proxy)。</p>
+</blockquote>
+<blockquote>
+<p><br/>在计算机世界里，由于单个服务器的处理客户端（用户）请求能力有一个极限，当用户的接入请求蜂拥而入时，会造成服务器忙不过来的局面，可以使用多个服务器来共同分担成千上万的用户请求，这些服务器提供相同的服务，对于用户来说，根本感觉不到任何差别</p>
+</blockquote>
+<p><strong>反向代理的实现</strong></p>
+<ul>
+<li>需要有一个负载均衡设备来分发用户请求，将用户请求分发到空闲的服务器上</li>
+<li>服务器返回自己的服务到负载均衡设备</li>
+<li>负载均衡将服务器的服务返回用户<br><img src="https://pic2.zhimg.com/80/v2-3b4274d49d3babd1cc2ba521b72892aa_hd.jpg" alt="proxy"></li>
+</ul>
+<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a><strong>代理</strong></h4><blockquote>
+<p>1.用户希望代理服务器帮助自己，和要访问服务器通信，为了实现此目标，需要以下工作</p>
+<blockquote>
+<p>用户IP报文的目的IP = 代理服务器IP<br><br>用户报文端口号 = 代理服务器监听端口号<br><br>HTTP 消息里的URL要提供服务器的链接<br><br><br>2.代理服务器可以根据c)里的链接与服务器直接通信<br>3.服务器返回网页<br>4.代理服务器打包3）中的网页，返回用户</p>
+</blockquote>
+</blockquote>
+<h3 id="更多参见如下"><a href="#更多参见如下" class="headerlink" title="更多参见如下"></a>更多参见如下</h3><p><a href="https://mp.weixin.qq.com/s/dHNZeG_-4BmR1nj1zZjrog" target="_blank" rel="noopener">反向代理为何叫反向代理</a></p>
 
             </div>
 
@@ -229,8 +249,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2019/10/25/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://yoursite.com/2019/10/25/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://yoursite.com/2019/10/29/nginx-one/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/10/29/nginx-one/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
